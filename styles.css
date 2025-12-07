@@ -1,0 +1,269 @@
+/* Contenido del archivo styles.css anterior */
+/* Variables para el Tema Dark/Moderno con Acento Amarillo */
+:root {
+    /* Fondos Oscuros */
+    --bg-main: #121212; /* Fondo principal del cuerpo */
+    --bg-navbar: #0D0D0D; /* Fondo más oscuro para el navbar/menu */
+    --bg-card: #1E1E1E; /* Fondo de las tarjetas/items de la galería */
+    
+    /* Colores de Acento (Amarillo/Dorado Llamativo) */
+    --accent-color: #ffc700; 
+    
+    /* Texto y Sombras */
+    --text-light: #E0E0E0;
+    --text-muted: #808080;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.6);
+    /* Sombra de Borde con Glow Amarillo */
+    --shadow-accent-glow: 0 0 15px rgba(255, 199, 0, 0.6); 
+    
+    --border-radius-lg: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Transición suave para todos los cambios */
+    transition: all 0.3s ease; 
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* CLAVE: Fondo principal Dark Mode */
+    background: var(--bg-main); 
+    color: var(--text-light); 
+    padding-top: 60px; 
+    transition: background-color 0.3s ease; 
+}
+
+/* ========================================
+   NAVBAR (Ajustado a Dark Mode)
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--bg-navbar); /* Fondo oscuro */
+    box-shadow: var(--shadow-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 1000;
+    /* Borde inferior de color de acento */
+    border-bottom: 3px solid var(--accent-color); 
+}
+
+.navbar-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-light);
+    cursor: default;
+}
+
+.navbar-logo i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    border-bottom-color: var(--accent-color); 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.mobile-dropdown {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-navbar); /* Fondo oscuro del menú móvil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    z-index: 999;
+}
+
+.mobile-dropdown.active {
+    max-height: 300px;
+}
+
+.mobile-dropdown ul {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.mobile-dropdown li a {
+    display: block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-dropdown li a:hover {
+    background-color: rgba(255, 199, 0, 0.1); /* Fondo sutil de acento */
+    color: var(--accent-color);
+}
+
+/* ========================================
+   CONTENIDO Y HEADER 
+   ======================================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+/* ========================================
+   GALERÍA GRID Y VISIBILIDAD DE IMAGEN
+   ======================================== */
+.gallery {
+    display: grid;
+    /* Mantiene 2 columnas en móvil y se adapta en desktop (Responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    /* Fondo de tarjeta oscuro */
+    background: var(--bg-card); 
+    border: 3px solid transparent; 
+    filter: brightness(0.95);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border 0.4s, filter 0.4s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    /* Sombra elevada + glow de acento (Efecto llamativo) */
+    box-shadow: var(--shadow-hover), var(--shadow-accent-glow); 
+    /* Borde de color de acento */
+    border-color: var(--accent-color); 
+    filter: brightness(1); 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08); 
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Mantenemos el overlay oscuro sobre las imágenes */
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); 
+    color: var(--text-light);
+    padding: 1.5rem; 
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.overlay p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-item img {
+        height: 320px;
+    }
+}

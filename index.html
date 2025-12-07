@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Animales | Dark Mode</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <i class="fas fa-paw"></i>
+            Zoo Fotos 🐾
+        </div>
+        <ul class="nav-links">
+            <li><a href="#herbivoros">Herbívoros</a></li>
+            <li><a href="#carnivoros">Carnívoros</a></li>
+            <li><a href="#omnivoros">Omnívoros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="mobile-dropdown" id="mobile-dropdown">
+        <ul>
+            <li><a href="#herbivoros">Herbívoros</a></li>
+            <li><a href="#carnivoros">Carnívoros</a></li>
+            <li><a href="#omnivoros">Omnívoros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Galería de Especies 🐾</h1>
+            <p>Descubre el reino animal dividido por su tipo de alimentación.</p>
+        </header>
+
+        <section id="herbivoros">
+            <h2 style="color: var(--text-light); margin-bottom: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem;">🌿 1. Herbívoros</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="her1.jpg" alt="Rinoceronte y cría">
+                    <div class="overlay">
+                        <h3>Rinoceronte Blanco</h3>
+                        <p>Imponente mamífero de la sabana.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="her2.jpeg" alt="Panda Rojo">
+                    <div class="overlay">
+                        <h3>Panda Rojo</h3>
+                        <p>Especie arbórea que se alimenta de bambú.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="her3.jpg" alt="Conejo comiendo hoja">
+                    <div class="overlay">
+                        <h3>Conejo Silvestre</h3>
+                        <p>Roedor ágil consumiendo vegetación.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="her4.jpg" alt="Colibrí libando flor">
+                    <div class="overlay">
+                        <h3>Colibrí Esmeralda</h3>
+                        <p>Aves que se alimentan de néctar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br><br>
+
+        <section id="carnivoros">
+            <h2 style="color: var(--text-light); margin-bottom: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem;">🥩 2. Carnívoros</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="car1.webp" alt="León Macho">
+                    <div class="overlay">
+                        <h3>León Africano</h3>
+                        <p>El rey de la selva y depredador principal.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="car2.jpg" alt="Pantera Negra">
+                    <div class="overlay">
+                        <h3>Pantera Negra</h3>
+                        <p>Melanismo en el leopardo o jaguar.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="car3.jpg" alt="Oso Negro">
+                    <div class="overlay">
+                        <h3>Oso Negro Americano</h3>
+                        <p>Mamífero grande con una dieta variada.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="car4.webp" alt="Cocodrilo">
+                    <div class="overlay">
+                        <h3>Cocodrilo</h3>
+                        <p>Reptil cazador de aguas dulces y saladas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br><br>
+
+        <section id="omnivoros">
+            <h2 style="color: var(--text-light); margin-bottom: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem;">🍎 3. Omnívoros</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="omn1.jpg" alt="Cuervo comiendo">
+                    <div class="overlay">
+                        <h3>Cuervo Común</h3>
+                        <p>Ave inteligente que se alimenta de granos y carroña.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="omn2.jpg" alt="Mapache">
+                    <div class="overlay">
+                        <h3>Mapache Boreal</h3>
+                        <p>Especie adaptable que consume casi cualquier cosa.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="omn3.jpg" alt="Erizo en la hierba">
+                    <div class="overlay">
+                        <h3>Erizo Europeo</h3>
+                        <p>Pequeño insectívoro que también come frutas.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="omn4.jpg" alt="Zorro comiendo bayas">
+                    <div class="overlay">
+                        <h3>Zorro Rojo</h3>
+                        <p>Cánido cuya dieta incluye bayas, insectos y pequeños animales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
